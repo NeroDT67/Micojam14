@@ -13,7 +13,8 @@ var moving : bool = false
 var MoveLineIndex : int = 0
 var delay : int = 0
 
-var targetPosition : Vector2
+@onready var targetPosition : Vector2 = position
+@onready var startPosition : Vector2 = position
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -30,21 +31,31 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
+	
 
-	if moving and MoveLine.points.size() > MoveLineIndex+1:
+	if moving :
 		
-		var direction = clampi( targetPosition.x - position.x, -1, 1)
-		#print_debug(direction)
+		var direction = clampi(targetPosition.x - position.x, -1, 1)
+		
 		velocity.x = direction * SPEED
 		
-		if (position.x - targetPosition.x) < 1 and (position.x - targetPosition.x) > -1:
+		#print("Position")
+		#print(position.x)
+		#print(position.y)
+		#print("target")
+		#print(targetPosition.x)
+		#print(targetPosition.y)
+		
+		if (position.x - targetPosition.x) < 5 and (position.x - targetPosition.x) > -5:
 			MoveLineIndex += 1
 			calcutateTargetPosition()
 			
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-
+	print(targetPosition.y - startPosition.y)
+	if is_on_floor() and (targetPosition.y - startPosition.y) < -10 and moving:
+		velocity.y = JUMP_VELOCITY
 
 	# animations
 	
@@ -71,12 +82,15 @@ func _physics_process(delta):
 
 
 func startMoving():
-	#MoveLine.visible = false
+	MoveLine.visible = false
 	MoveLineIndex = 0
+	startPosition = position
 	calcutateTargetPosition()
 	moving = true
 
 	
 func calcutateTargetPosition():
-	
-	targetPosition = position + (MoveLine.points[MoveLineIndex+1] - MoveLine.points[MoveLineIndex])
+	if MoveLine.points.size() > MoveLineIndex:
+		targetPosition = startPosition + MoveLine.points[MoveLineIndex] * 2
+	else:
+		moving = false

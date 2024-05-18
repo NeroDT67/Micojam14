@@ -33,3 +33,4 @@ func DrawMoveLine():
 	MoveLine.clear_points()
 	MoveLine.add_point(position)
 	drawMoveLine = true
+	MoveLine.visible = true
