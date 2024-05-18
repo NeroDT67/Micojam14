@@ -30,11 +30,20 @@ text = "End Turn"
 [node name="Move" type="Button" parent="."]
 layout_mode = 1
 offset_left = 5.0
-offset_top = 5.0
+offset_top = 15.0
 offset_right = 56.0
-offset_bottom = 36.0
+offset_bottom = 46.0
 scale = Vector2(3, 3)
 text = "Move"
 
+[node name="shoot" type="Button" parent="."]
+offset_left = 5.0
+offset_top = 125.0
+offset_right = 58.0
+offset_bottom = 156.0
+scale = Vector2(3, 3)
+text = "Shoot"
+
 [connection signal="pressed" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]
 [connection signal="button_up" from="Move" to="." method="_on_move_button_up"]
+[connection signal="button_up" from="shoot" to="." method="_on_shoot_button_up"]

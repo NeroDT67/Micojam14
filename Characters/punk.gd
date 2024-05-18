@@ -3,24 +3,28 @@ extends CharacterBody2D
 
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 300.0  # Speed of the character when moving
+const JUMP_VELOCITY = -400.0  # Initial velocity when jumping
 
-var AnimFlip : bool = false
-var moving : bool = false
+var AnimFlip : bool = false  # Animation flip flag
+var moving : bool = false  # Moving flag
 
-@onready var MoveLine : Line2D = $Lines/MoveLine
-var MoveLineIndex : int = 0
-var delay : int = 0
+@onready var MoveLine : Line2D = $Lines/MoveLine  # Line for showing the character's path
+var MoveLineIndex : int = 0  # Index of the current path line
 
-@onready var targetPosition : Vector2 = position
-@onready var startPosition : Vector2 = position
+
+
+var ShootingPos : Array[Vector2] = []  # Array of all the shooting positions
+var ShootingAngle : Array[Vector2] = []  # Array of all the shooting angles
+
+@onready var targetPosition : Vector2 = position  # Target position for the character to move to
+@onready var startPosition : Vector2 = position  # Start position of the character
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")  # Gravity value
 
+@onready var anim : AnimatedSprite2D = $AnimatedSprite2D  # Character's animation sprite
 
-@onready var anim : AnimatedSprite2D = $AnimatedSprite2D
 
 
 	 
@@ -53,7 +57,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-	print(targetPosition.y - startPosition.y)
+	#print(targetPosition.y - startPosition.y)
 	if is_on_floor() and (targetPosition.y - startPosition.y) < -10 and moving:
 		velocity.y = JUMP_VELOCITY
 
@@ -79,10 +83,11 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-
+signal disableShootingLine
 
 func startMoving():
 	MoveLine.visible = false
+	emit_signal("disableShootingLine")
 	MoveLineIndex = 0
 	startPosition = position
 	calcutateTargetPosition()
@@ -94,3 +99,7 @@ func calcutateTargetPosition():
 		targetPosition = startPosition + MoveLine.points[MoveLineIndex] * 2
 	else:
 		moving = false
+
+func SetShootingDetails(shootingPos : Array[Vector2], shootingAngle : Array[Vector2]):
+	ShootingPos = shootingPos
+	ShootingAngle = shootingAngle
