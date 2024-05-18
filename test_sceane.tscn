@@ -33,6 +33,7 @@ offset_bottom = 1080.0
 [node name="GameplayUi" parent="Ui" instance=ExtResource("2_7m4m8")]
 layout_mode = 1
 
+[connection signal="end_turn_pressed" from="Ui/GameplayUi" to="Punk" method="startMoving"]
 [connection signal="move_pressed" from="Ui/GameplayUi" to="Punk/Lines" method="DrawMoveLine"]
 
 [editable path="Punk"]
