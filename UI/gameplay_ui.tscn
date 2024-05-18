@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://h2hqcwk6scl0"]
+
+[ext_resource type="Script" path="res://UI/gameplay_ui.gd" id="1_eoapi"]
+
+[node name="GameplayUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eoapi")
+
+[node name="EndTurnButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -431.0
+offset_top = -218.0
+offset_right = -360.0
+offset_bottom = -187.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(5, 5)
+text = "Confirm"
+
+[node name="Move" type="Button" parent="."]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 56.0
+offset_bottom = 36.0
+scale = Vector2(3, 3)
+text = "Move"
+
+[connection signal="pressed" from="EndTurnButton" to="." method="_on_end_turn_button_pressed"]
+[connection signal="button_up" from="Move" to="." method="_on_move_button_up"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://ejipg4wiv0l2"]
+
+[ext_resource type="PackedScene" uid="uid://5llmqrincwvn" path="res://Characters/punk.tscn" id="1_t1sl5"]
+[ext_resource type="PackedScene" uid="uid://h2hqcwk6scl0" path="res://UI/gameplay_ui.tscn" id="2_7m4m8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05blu"]
+
+[node name="testSceane" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(686.33, 625.79)
+scale = Vector2(35, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_05blu")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1221.59, 625.79)
+scale = Vector2(10, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_05blu")
+
+[node name="Punk" parent="." instance=ExtResource("1_t1sl5")]
+position = Vector2(828, 573)
+
+[node name="Ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="GameplayUi" parent="Ui" instance=ExtResource("2_7m4m8")]
+layout_mode = 1
+
+[connection signal="move_pressed" from="Ui/GameplayUi" to="Punk/Lines" method="DrawMoveLine"]
+
+[editable path="Punk"]
