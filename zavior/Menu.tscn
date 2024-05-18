@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cby3rvlxi11jy"]
+
+[ext_resource type="Script" path="res://zavior/Menu.gd" id="1_dblnj"]
+[ext_resource type="Texture2D" uid="uid://drpwb7h72uo2i" path="res://Assets/Free Industrial Zone Tileset/2 Background/Background.png" id="2_1tewl"]
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dblnj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.33838
+offset_top = -279.525
+offset_right = 126.338
+offset_bottom = -178.525
+grow_vertical = 0
+scale = Vector2(2.33412, 2.7564)
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "StartButton"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "QuitButton"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(960, 540)
+scale = Vector2(3.33, 3.33)
+texture = ExtResource("2_1tewl")
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
