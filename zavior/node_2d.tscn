@@ -1,0 +1,262 @@
+[gd_scene load_steps=20 format=3 uid="uid://6rfgs3rbbrvk"]
+
+[ext_resource type="Texture2D" uid="uid://drpwb7h72uo2i" path="res://Assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_8xjqb"]
+[ext_resource type="Texture2D" uid="uid://cf34eygvpy151" path="res://Assets/Sidescroller Shooter - Central City/Background/Mid Fog.png" id="2_boe2k"]
+[ext_resource type="Texture2D" uid="uid://bl721ta6nox1x" path="res://Assets/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="3_3wfcc"]
+[ext_resource type="Texture2D" uid="uid://bv5nhxagfyy0r" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_11.png" id="4_dyb6h"]
+[ext_resource type="Texture2D" uid="uid://i3ig3aci7vjr" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Fence2.png" id="5_3i710"]
+[ext_resource type="Texture2D" uid="uid://8ydt1bgdni4o" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Locker4.png" id="6_ej0x6"]
+[ext_resource type="Texture2D" uid="uid://3tqq40h3c5cu" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_73.png" id="7_umbya"]
+[ext_resource type="Texture2D" uid="uid://b6sxpswsl56f8" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_62.png" id="8_cstnr"]
+[ext_resource type="Texture2D" uid="uid://pgcmrkb2dmti" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_04.png" id="9_jpwlt"]
+[ext_resource type="Texture2D" uid="uid://clnnyhtpkpniq" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_05.png" id="10_7lxoh"]
+[ext_resource type="Texture2D" uid="uid://bxydgcoav54kk" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_06.png" id="11_3i0wm"]
+[ext_resource type="Texture2D" uid="uid://cb880qlmc645p" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Fence3.png" id="12_r8b6u"]
+[ext_resource type="Texture2D" uid="uid://b6huhbl3qxgwu" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Fence1.png" id="13_l6sh7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fh2w"]
+size = Vector2(1.67815, 35.6761)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erlg6"]
+size = Vector2(8.13215, 4.88258)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1eor"]
+size = Vector2(11.4149, 5.89294)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nqr7w"]
+size = Vector2(1.46838, 40.932)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_611js"]
+size = Vector2(0.92334, 0.302343)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3s5r"]
+size = Vector2(24.5255, 1.34934)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="background" type="TextureRect" parent="."]
+texture_filter = 1
+offset_top = -11.0
+offset_right = 1917.0
+offset_bottom = 1070.0
+texture = ExtResource("1_8xjqb")
+metadata/_edit_lock_ = true
+
+[node name="Mid" type="TextureRect" parent="background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 695.0
+offset_right = -4.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_boe2k")
+metadata/_edit_lock_ = true
+
+[node name="forground" type="TextureRect" parent="background"]
+offset_left = -1.0
+offset_top = 645.0
+offset_right = 1920.0
+offset_bottom = 1095.0
+texture = ExtResource("3_3wfcc")
+metadata/_edit_lock_ = true
+
+[node name="underground" type="Sprite2D" parent="background"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(266.5, 839)
+scale = Vector2(1.71935, 2.21212)
+texture = ExtResource("4_dyb6h")
+region_enabled = true
+region_rect = Rect2(0, 0, 310, 239.93)
+metadata/_edit_lock_ = true
+
+[node name="underground2" type="Sprite2D" parent="background"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(1587, 876)
+scale = Vector2(1.71935, 2.24414)
+texture = ExtResource("4_dyb6h")
+region_enabled = true
+region_rect = Rect2(0, 0, 437.79, 204.815)
+metadata/_edit_lock_ = true
+
+[node name="Fence2" type="Sprite2D" parent="background"]
+position = Vector2(803.25, 971)
+scale = Vector2(4.48437, 3.25)
+texture = ExtResource("5_3i710")
+metadata/_edit_lock_ = true
+
+[node name="Fence3" type="Sprite2D" parent="background"]
+position = Vector2(946, 969)
+scale = Vector2(4.48437, 3.4375)
+texture = ExtResource("5_3i710")
+metadata/_edit_lock_ = true
+
+[node name="Fence4" type="Sprite2D" parent="background"]
+position = Vector2(660, 971)
+scale = Vector2(4.48437, 3.3125)
+texture = ExtResource("5_3i710")
+metadata/_edit_lock_ = true
+
+[node name="Locker4" type="Sprite2D" parent="background"]
+position = Vector2(1161, 962)
+scale = Vector2(4.59375, 3.69444)
+texture = ExtResource("6_ej0x6")
+metadata/_edit_lock_ = true
+
+[node name="Fence5" type="Sprite2D" parent="background"]
+position = Vector2(1071.5, 969.5)
+scale = Vector2(3.34375, 3.15625)
+texture = ExtResource("12_r8b6u")
+metadata/_edit_lock_ = true
+
+[node name="Fence1" type="Sprite2D" parent="background"]
+position = Vector2(591, 970.25)
+scale = Vector2(3.5, 3.07813)
+texture = ExtResource("13_l6sh7")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1261, 933)
+scale = Vector2(57.2058, 12.5574)
+
+[node name="floor" type="Sprite2D" parent="StaticBody2D"]
+z_index = 1
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(5.68124, -20.9438)
+scale = Vector2(0.0524422, 0.188733)
+texture = ExtResource("7_umbya")
+region_enabled = true
+region_rect = Rect2(0, 0, 251.145, 33)
+metadata/_edit_lock_ = true
+
+[node name="floor2" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0.333313, 31.2236)
+scale = Vector2(1, 1)
+texture = ExtResource("7_umbya")
+region_enabled = true
+region_rect = Rect2(0, 0, 251.145, 33)
+metadata/_edit_lock_ = true
+
+[node name="floor3" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-496.667, -45.1477)
+scale = Vector2(1, 1)
+texture = ExtResource("7_umbya")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+metadata/_edit_lock_ = true
+
+[node name="floor4" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-408.333, -28.692)
+scale = Vector2(0.885417, 0.984529)
+texture = ExtResource("8_cstnr")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 33)
+metadata/_edit_lock_ = true
+
+[node name="floor5" type="Sprite2D" parent="StaticBody2D/floor"]
+z_index = 1
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-334.667, 159.494)
+scale = Vector2(1.00253, 1.00691)
+texture = ExtResource("9_jpwlt")
+region_enabled = true
+region_rect = Rect2(0, 0, 33, 33)
+
+[node name="floor6" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-237, 159.494)
+scale = Vector2(1.00851, 1.00691)
+texture = ExtResource("10_7lxoh")
+region_enabled = true
+region_rect = Rect2(0, 0, 161.47, 33)
+metadata/_edit_lock_ = true
+
+[node name="floor8" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(15, -130.38)
+scale = Vector2(1, 1)
+texture = ExtResource("7_umbya")
+region_enabled = true
+region_rect = Rect2(0, 0, 192, 33)
+metadata/_edit_lock_ = true
+
+[node name="floor12" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-140.333, 159.916)
+scale = Vector2(1.00253, 1.00691)
+texture = ExtResource("11_3i0wm")
+region_enabled = true
+region_rect = Rect2(0, 0, 33, 33)
+metadata/_edit_lock_ = true
+
+[node name="floor7" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-366, 80.1688)
+scale = Vector2(0.885417, 0.984529)
+texture = ExtResource("8_cstnr")
+region_enabled = true
+region_rect = Rect2(0, 0, 33, 193.465)
+metadata/_edit_lock_ = true
+
+[node name="floor9" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-108.333, 110.97)
+scale = Vector2(1.00505, 1)
+texture = ExtResource("7_umbya")
+region_enabled = true
+region_rect = Rect2(0, 0, 33, 128.35)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.0174809, -5.8133)
+shape = SubResource("RectangleShape2D_6fh2w")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-5.92597, 9.11812)
+scale = Vector2(1.65948, 1.09276)
+shape = SubResource("RectangleShape2D_erlg6")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(6.52906, -20.9438)
+shape = SubResource("RectangleShape2D_p1eor")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-13.5126, -8.68014)
+scale = Vector2(1.02057, 1.0196)
+shape = SubResource("RectangleShape2D_nqr7w")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-15.9424, -26.3191)
+rotation = -3.14159
+scale = Vector2(0.34567, -4.74035)
+shape = SubResource("RectangleShape2D_611js")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-20.3825, -32.3315)
+rotation = -3.14159
+scale = Vector2(3.55923, 18.4373)
+shape = SubResource("RectangleShape2D_611js")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(6.48535, -45.4313)
+rotation = -3.14159
+scale = Vector2(0.409123, -4.19022)
+shape = SubResource("RectangleShape2D_e3s5r")
