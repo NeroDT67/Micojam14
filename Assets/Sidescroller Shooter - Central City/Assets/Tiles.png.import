@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://ds8mp3ojpv775"
+=======
+uid="uid://bni51kmhs66bv"
+>>>>>>> main
 path="res://.godot/imported/Tiles.png-2303311302640241db11fefb91c40003.ctex"
 metadata={
 "vram_texture": false
