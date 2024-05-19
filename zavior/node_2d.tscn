@@ -1,8 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://6rfgs3rbbrvk"]
+[gd_scene load_steps=24 format=3 uid="uid://6rfgs3rbbrvk"]
 
 [ext_resource type="Texture2D" uid="uid://drpwb7h72uo2i" path="res://Assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_8xjqb"]
-[ext_resource type="Texture2D" uid="uid://cf34eygvpy151" path="res://Assets/Sidescroller Shooter - Central City/Background/Mid Fog.png" id="2_boe2k"]
-[ext_resource type="Texture2D" uid="uid://bl721ta6nox1x" path="res://Assets/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="3_3wfcc"]
+[ext_resource type="Texture2D" uid="uid://cn3oto4ls64p" path="res://Assets/Sidescroller Shooter - Central City/Background/Mid Fog.png" id="2_boe2k"]
+[ext_resource type="Texture2D" uid="uid://cith5lle02ifb" path="res://Assets/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="3_3wfcc"]
 [ext_resource type="Texture2D" uid="uid://bv5nhxagfyy0r" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_11.png" id="4_dyb6h"]
 [ext_resource type="Texture2D" uid="uid://i3ig3aci7vjr" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Fence2.png" id="5_3i710"]
 [ext_resource type="Texture2D" uid="uid://8ydt1bgdni4o" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Locker4.png" id="6_ej0x6"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://bxydgcoav54kk" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_06.png" id="11_3i0wm"]
 [ext_resource type="Texture2D" uid="uid://cb880qlmc645p" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Fence3.png" id="12_r8b6u"]
 [ext_resource type="Texture2D" uid="uid://b6huhbl3qxgwu" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Fence1.png" id="13_l6sh7"]
+[ext_resource type="PackedScene" uid="uid://5llmqrincwvn" path="res://Characters/player/punk.tscn" id="14_4r2ft"]
+[ext_resource type="PackedScene" uid="uid://h2hqcwk6scl0" path="res://UI/gameplay_ui.tscn" id="15_wyqlq"]
+[ext_resource type="PackedScene" uid="uid://ditcpx2ydna45" path="res://Characters/enemy/enemy.tscn" id="16_b8kym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fh2w"]
 size = Vector2(1.67815, 35.6761)
@@ -24,13 +27,16 @@ size = Vector2(8.13215, 4.88258)
 size = Vector2(11.4149, 5.89294)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqr7w"]
-size = Vector2(1.46838, 40.932)
+size = Vector2(1.46838, 40.3824)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_611js"]
-size = Vector2(0.92334, 0.302343)
+size = Vector2(0.916931, 0.302343)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e3s5r"]
 size = Vector2(24.5255, 1.34934)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edn1g"]
+size = Vector2(5.92699, 20)
 
 [node name="Node2D" type="Node2D"]
 
@@ -53,7 +59,6 @@ metadata/_edit_lock_ = true
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(0.333313, 31.2236)
-scale = Vector2(1, 1)
 texture = ExtResource("7_umbya")
 region_enabled = true
 region_rect = Rect2(0, 0, 251.145, 33)
@@ -63,7 +68,6 @@ metadata/_edit_lock_ = true
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(-496.667, -45.1477)
-scale = Vector2(1, 1)
 texture = ExtResource("7_umbya")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 64)
@@ -103,7 +107,6 @@ metadata/_edit_lock_ = true
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(15, -130.38)
-scale = Vector2(1, 1)
 texture = ExtResource("7_umbya")
 region_enabled = true
 region_rect = Rect2(0, 0, 192, 33)
@@ -153,15 +156,10 @@ position = Vector2(6.52906, -20.9438)
 shape = SubResource("RectangleShape2D_p1eor")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-13.5126, -8.68014)
+position = Vector2(-13.5126, -8.39995)
 scale = Vector2(1.02057, 1.0196)
 shape = SubResource("RectangleShape2D_nqr7w")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-15.9424, -26.3191)
-rotation = -3.14159
-scale = Vector2(0.34567, -4.74035)
-shape = SubResource("RectangleShape2D_611js")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-20.3825, -32.3315)
@@ -174,6 +172,11 @@ position = Vector2(6.48535, -45.4313)
 rotation = -3.14159
 scale = Vector2(0.409123, -4.19022)
 shape = SubResource("RectangleShape2D_e3s5r")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-15.7594, -19.1122)
+shape = SubResource("RectangleShape2D_edn1g")
+metadata/_edit_lock_ = true
 
 [node name="Mid" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -257,3 +260,30 @@ z_index = -1
 position = Vector2(960, 529)
 scale = Vector2(3.33, 3.33)
 texture = ExtResource("1_8xjqb")
+metadata/_edit_lock_ = true
+
+[node name="Punk" parent="." instance=ExtResource("14_4r2ft")]
+position = Vector2(100, 456)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="GameplayUi" parent="Control" instance=ExtResource("15_wyqlq")]
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="enemy" parent="." instance=ExtResource("16_b8kym")]
+position = Vector2(1322, 558)
+PonitOne = Vector2(1300, 599)
+PonitTwo = Vector2(1700, 599)
+
+[connection signal="sendShootingData" from="Punk" to="Punk/Lines" method="sendShootingData"]
+[connection signal="end_turn_pressed" from="Control/GameplayUi" to="Punk" method="startMoving"]
+[connection signal="move_pressed" from="Control/GameplayUi" to="Punk/Lines" method="DrawMoveLine"]
+[connection signal="shoot_pressed" from="Control/GameplayUi" to="Punk/Lines" method="DrawShootingLine"]
+
+[editable path="Punk"]

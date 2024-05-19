@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ejipg4wiv0l2"]
 
-[ext_resource type="PackedScene" uid="uid://5llmqrincwvn" path="res://Characters/punk.tscn" id="1_t1sl5"]
+[ext_resource type="PackedScene" uid="uid://5llmqrincwvn" path="res://Characters/player/punk.tscn" id="1_t1sl5"]
 [ext_resource type="PackedScene" uid="uid://h2hqcwk6scl0" path="res://UI/gameplay_ui.tscn" id="2_7m4m8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05blu"]

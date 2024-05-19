@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 600.0
-
+const Damage = 5
 
 func start(_position, _direction):
 	
@@ -15,7 +15,9 @@ func _physics_process(_delta):
 	var collision = move_and_collide(velocity * _delta)
 
 	if collision:
-		pass
+		if collision.get_collider().has_method("hit"):
+			collision.get_collider().hit(Damage)
+		queue_free()
 
 		
 
