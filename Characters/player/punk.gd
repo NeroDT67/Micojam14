@@ -24,7 +24,7 @@ var ShootingAngle : Array[Vector2] = []  # Array of all the shooting angles
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")  # Gravity value
 
 @onready var anim : AnimatedSprite2D = $AnimatedSprite2D  # Character's animation sprite
-
+@onready var  gunshot = $gunshot
 
 
 	 
@@ -129,5 +129,7 @@ var bullet = preload("res://GunsAndBullets/Bullet1.tscn")
 
 func Shoot(pos : Vector2, angle : Vector2):
 	var b = bullet.instantiate()
+	gunshot.play()
 	b.start(pos + angle*50, angle)
 	get_tree().root.add_child(b)
+	

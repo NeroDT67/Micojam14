@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv55x0cgkealh"]
+
+[ext_resource type="AudioStream" uid="uid://m8fvecg8mfos" path="res://music/Apotos (Day) - Sonic Unleashed [OST].mp3" id="1_e7lmi"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_e7lmi")
+autoplay = true

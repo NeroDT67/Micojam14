@@ -63,4 +63,5 @@ func _physics_process(delta):
 	move_and_slide()
 
 func hit(damage :int):
+	LevelOneScript.score += 1
 	queue_free()

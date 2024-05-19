@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://6rfgs3rbbrvk"]
+[gd_scene load_steps=28 format=3 uid="uid://6rfgs3rbbrvk"]
 
 [ext_resource type="Texture2D" uid="uid://drpwb7h72uo2i" path="res://Assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_8xjqb"]
 [ext_resource type="Texture2D" uid="uid://cn3oto4ls64p" path="res://Assets/Sidescroller Shooter - Central City/Background/Mid Fog.png" id="2_boe2k"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bv5nhxagfyy0r" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_11.png" id="4_dyb6h"]
 [ext_resource type="Texture2D" uid="uid://i3ig3aci7vjr" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Fence2.png" id="5_3i710"]
 [ext_resource type="Texture2D" uid="uid://8ydt1bgdni4o" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Locker4.png" id="6_ej0x6"]
+[ext_resource type="Texture2D" uid="uid://oesrmkk75cn8" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_09.png" id="6_to3wx"]
 [ext_resource type="Texture2D" uid="uid://3tqq40h3c5cu" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_73.png" id="7_umbya"]
 [ext_resource type="Texture2D" uid="uid://b6sxpswsl56f8" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_62.png" id="8_cstnr"]
 [ext_resource type="Texture2D" uid="uid://pgcmrkb2dmti" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_04.png" id="9_jpwlt"]
@@ -16,6 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://5llmqrincwvn" path="res://Characters/player/punk.tscn" id="14_4r2ft"]
 [ext_resource type="PackedScene" uid="uid://h2hqcwk6scl0" path="res://UI/gameplay_ui.tscn" id="15_wyqlq"]
 [ext_resource type="PackedScene" uid="uid://ditcpx2ydna45" path="res://Characters/enemy/enemy.tscn" id="16_b8kym"]
+[ext_resource type="Script" path="res://zavior/scoreL.gd" id="16_w3uf3"]
+[ext_resource type="PackedScene" uid="uid://bv55x0cgkealh" path="res://music/music2d.tscn" id="18_we21t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fh2w"]
 size = Vector2(1.67815, 35.6761)
@@ -37,6 +40,9 @@ size = Vector2(24.5255, 1.34934)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_edn1g"]
 size = Vector2(5.92699, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7m74h"]
+size = Vector2(60.3431, 62.9999)
 
 [node name="Node2D" type="Node2D"]
 
@@ -142,6 +148,43 @@ region_enabled = true
 region_rect = Rect2(0, 0, 33, 128.35)
 metadata/_edit_lock_ = true
 
+[node name="floor10" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-279, 51.4767)
+scale = Vector2(0.364583, 0.421942)
+texture = ExtResource("6_to3wx")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="floor11" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-320.333, 67.9325)
+scale = Vector2(0.364583, 0.421942)
+texture = ExtResource("6_to3wx")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+metadata/_edit_lock_ = true
+
+[node name="floor13" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-233.667, 31.2235)
+scale = Vector2(0.364583, 0.421942)
+texture = ExtResource("6_to3wx")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="floor14" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-189.667, 19.8311)
+scale = Vector2(0.364583, 0.421942)
+texture = ExtResource("6_to3wx")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-0.0174809, -5.8133)
 shape = SubResource("RectangleShape2D_6fh2w")
@@ -177,6 +220,27 @@ shape = SubResource("RectangleShape2D_e3s5r")
 position = Vector2(-15.7594, -19.1122)
 shape = SubResource("RectangleShape2D_edn1g")
 metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-11.1178, -8.16251)
+scale = Vector2(0.0191195, 0.0796343)
+shape = SubResource("RectangleShape2D_7m74h")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-8.96762, -11.3081)
+scale = Vector2(0.0191195, 0.0796343)
+shape = SubResource("RectangleShape2D_7m74h")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-6.59024, -14.812)
+scale = Vector2(0.0191195, 0.0796343)
+shape = SubResource("RectangleShape2D_7m74h")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-4.2653, -17.2806)
+scale = Vector2(0.0191195, 0.0796343)
+shape = SubResource("RectangleShape2D_7m74h")
 
 [node name="Mid" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -276,10 +340,32 @@ metadata/_edit_lock_ = true
 layout_mode = 1
 metadata/_edit_lock_ = true
 
+[node name="scoreL" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -314.0
+offset_right = -7.0
+offset_bottom = 90.0
+grow_horizontal = 0
+theme_override_colors/default_color = Color(0.85098, 1, 0.898039, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "HI"
+script = ExtResource("16_w3uf3")
+
 [node name="enemy" parent="." instance=ExtResource("16_b8kym")]
 position = Vector2(1322, 558)
 PonitOne = Vector2(1300, 599)
 PonitTwo = Vector2(1700, 599)
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("18_we21t")]
+position = Vector2(303, 1233)
+
+[node name="enemy2" parent="." instance=ExtResource("16_b8kym")]
+position = Vector2(869, 940)
+PonitOne = Vector2(600, 940)
+PonitTwo = Vector2(1100, 940)
 
 [connection signal="sendShootingData" from="Punk" to="Punk/Lines" method="sendShootingData"]
 [connection signal="end_turn_pressed" from="Control/GameplayUi" to="Punk" method="startMoving"]

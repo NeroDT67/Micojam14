@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dtwvqil6kwyi"
+path="res://.godot/imported/427970__kyanite__wosh.wav-dbaeae354f58bb95fbb0b04223677ddf.sample"
+
+[deps]
+
+source_file="res://music/Sound Effect/427970__kyanite__wosh.wav"
+dest_files=["res://.godot/imported/427970__kyanite__wosh.wav-dbaeae354f58bb95fbb0b04223677ddf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
