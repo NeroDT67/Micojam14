@@ -78,7 +78,7 @@ func sendShootingData():
 	ShootingAngle.fill(Vector2.ZERO)
 
 	for i in ShootingLineArray.size():
-		ShootingPos[i] = position + ShootingLineArray[i].points[0]
+		ShootingPos[i] = global_position + (ShootingLineArray[i].points[0])
 		ShootingAngle[i] = (ShootingLineArray[i].points[ShootingLineArray[i].points.size() - 1] - ShootingLineArray[i].points[0]).normalized()
 
 	emit_signal("ShootDataSignal", ShootingPos, ShootingAngle)

@@ -61,6 +61,17 @@ func _physics_process(delta):
 	if is_on_floor() and (targetPosition.y - startPosition.y) < -10 and moving:
 		velocity.y = JUMP_VELOCITY
 
+	for i in range(ShootingPos.size()):
+		
+		if ShootingPos[i].distance_to(position) < 5:
+			Shoot(ShootingPos[i], ShootingAngle[i])
+			ShootingPos.remove_at(i)
+			ShootingAngle.remove_at(i)
+			break
+			
+	
+	
+
 	# animations
 	
 	if velocity.x != 0:
@@ -84,10 +95,16 @@ func _physics_process(delta):
 
 
 signal disableShootingLine
+signal sendShootingData
+signal ResetShootingData
 
 func startMoving():
+	ShootingPos = []
+	ShootingAngle = []
 	MoveLine.visible = false
 	emit_signal("disableShootingLine")
+	emit_signal("sendShootingData")
+	emit_signal("ResetShootingData")
 	MoveLineIndex = 0
 	startPosition = position
 	calcutateTargetPosition()
@@ -103,3 +120,15 @@ func calcutateTargetPosition():
 func SetShootingDetails(shootingPos : Array[Vector2], shootingAngle : Array[Vector2]):
 	ShootingPos = shootingPos
 	ShootingAngle = shootingAngle
+
+func ShootingDetailsReset():
+	ShootingPos = []
+	ShootingAngle = []
+
+
+var bullet = preload("res://GunsAndBullets/Bullet1.tscn")
+
+func Shoot(pos : Vector2, angle : Vector2):
+	var b = bullet.instantiate()
+	b.start(pos + angle*10, angle)
+	get_tree().root.add_child(b)

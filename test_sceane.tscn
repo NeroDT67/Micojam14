@@ -34,6 +34,10 @@ offset_bottom = 1080.0
 layout_mode = 1
 metadata/_edit_lock_ = true
 
+[connection signal="ResetShootingData" from="Punk" to="Punk/Lines" method="ResetShootingLine"]
+[connection signal="disableShootingLine" from="Punk" to="Punk/Lines" method="hideShootingLine"]
+[connection signal="sendShootingData" from="Punk" to="Punk/Lines" method="sendShootingData"]
+[connection signal="ShootDataSignal" from="Punk/Lines" to="Punk" method="SetShootingDetails"]
 [connection signal="end_turn_pressed" from="Ui/GameplayUi" to="Punk" method="startMoving"]
 [connection signal="move_pressed" from="Ui/GameplayUi" to="Punk/Lines" method="DrawMoveLine"]
 [connection signal="shoot_pressed" from="Ui/GameplayUi" to="Punk/Lines" method="DrawShootingLine"]
