@@ -23,7 +23,6 @@ window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="viewport"
 
-<<<<<<< HEAD
 [input]
 
 MouseLeft={
@@ -32,8 +31,6 @@ MouseLeft={
 ]
 }
 
-=======
->>>>>>> main
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
