@@ -32,3 +32,8 @@ default_color = Color(0.352941, 1, 0.372549, 1)
 [node name="ShootingLineExample" type="Line2D" parent="Lines"]
 width = 2.0
 default_color = Color(1, 0, 0, 1)
+
+[connection signal="ResetShootingData" from="." to="Lines" method="ResetShootingLine"]
+[connection signal="disableShootingLine" from="." to="Lines" method="hideShootingLine"]
+[connection signal="sendShootingData" from="." to="Lines" method="sendShootingData"]
+[connection signal="ShootDataSignal" from="Lines" to="." method="SetShootingDetails"]
