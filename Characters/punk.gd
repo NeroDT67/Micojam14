@@ -50,7 +50,7 @@ func _physics_process(delta):
 		#print(targetPosition.x)
 		#print(targetPosition.y)
 		
-		if position.distance_to(targetPosition) < 10:
+		if position.x - targetPosition.x < 10:
 			MoveLineIndex += 1
 			calcutateTargetPosition()
 			
@@ -58,12 +58,12 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 	#print(targetPosition.y - startPosition.y)
-	if is_on_floor() and (targetPosition.y - startPosition.y) < -10 and moving:
+	if is_on_floor() and (targetPosition.y - startPosition.y) < -20 and moving:
 		velocity.y = JUMP_VELOCITY
 
 	for i in range(ShootingPos.size()):
 		
-		if ShootingPos[i].distance_to(position) < 10:
+		if ShootingPos[i].distance_to(position) < 20:
 			Shoot(ShootingPos[i], ShootingAngle[i])
 			ShootingPos.remove_at(i)
 			ShootingAngle.remove_at(i)
@@ -83,13 +83,12 @@ func _physics_process(delta):
 		anim.flip_h = AnimFlip
 		
 		anim.play("Run")
+	else:
+		anim.play("Idle")
 
 	if sqrt(velocity.y * velocity.y) > 5:
 		anim.play("Jump")
 	
-	if velocity.x == 0:
-		anim.play("Idle")
-
 	
 	move_and_slide()
 

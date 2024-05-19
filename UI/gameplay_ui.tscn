@@ -37,6 +37,7 @@ scale = Vector2(3, 3)
 text = "Move"
 
 [node name="shoot" type="Button" parent="."]
+layout_mode = 0
 offset_left = 5.0
 offset_top = 125.0
 offset_right = 58.0

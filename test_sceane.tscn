@@ -24,11 +24,15 @@ shape = SubResource("RectangleShape2D_05blu")
 [node name="Punk" parent="." instance=ExtResource("1_t1sl5")]
 position = Vector2(828, 573)
 
+[node name="CollisionShape2D" parent="Punk" index="0"]
+debug_color = Color(0.867316, 0.222124, 0.687125, 0.42)
+
 [node name="Ui" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
+metadata/_edit_lock_ = true
 
 [node name="GameplayUi" parent="Ui" instance=ExtResource("2_7m4m8")]
 layout_mode = 1

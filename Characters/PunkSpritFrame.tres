@@ -1,8 +1,9 @@
-[gd_resource type="SpriteFrames" load_steps=18 format=3 uid="uid://vhdlgkc4jcpe"]
+[gd_resource type="SpriteFrames" load_steps=23 format=3 uid="uid://vhdlgkc4jcpe"]
 
 [ext_resource type="Texture2D" uid="uid://bftgq8ascw4v3" path="res://Assets/free-guns-for-cyberpunk-characters-pixel-art/1 Characters/2 Punk/Jump1.png" id="1_f8w5w"]
 [ext_resource type="Texture2D" uid="uid://cgk20l5pox0gi" path="res://Assets/free-guns-for-cyberpunk-characters-pixel-art/1 Characters/2 Punk/Idle1.png" id="1_iq0lw"]
 [ext_resource type="Texture2D" uid="uid://2w7b4b0cnbgy" path="res://Assets/free-guns-for-cyberpunk-characters-pixel-art/1 Characters/2 Punk/Run1.png" id="2_m0e4f"]
+[ext_resource type="Texture2D" uid="uid://djblv0005njy4" path="res://Assets/free-guns-for-cyberpunk-characters-pixel-art/1 Characters/2 Punk/Sitdown1.png" id="4_f4esq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wsxea"]
 atlas = ExtResource("1_iq0lw")
@@ -59,6 +60,22 @@ region = Rect2(192, 14, 24, 34)
 [sub_resource type="AtlasTexture" id="AtlasTexture_0mi0u"]
 atlas = ExtResource("2_m0e4f")
 region = Rect2(240, 14, 24, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v154d"]
+atlas = ExtResource("4_f4esq")
+region = Rect2(0, 11, 26, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xihf"]
+atlas = ExtResource("4_f4esq")
+region = Rect2(49, 11, 26, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veqlc"]
+atlas = ExtResource("4_f4esq")
+region = Rect2(98, 11, 26, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7bg0"]
+atlas = ExtResource("4_f4esq")
+region = Rect2(147, 11, 26, 37)
 
 [resource]
 animations = [{
@@ -117,5 +134,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v154d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xihf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veqlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7bg0")
+}],
+"loop": true,
+"name": &"T-Bag",
 "speed": 5.0
 }]

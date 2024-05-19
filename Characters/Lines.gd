@@ -61,6 +61,10 @@ func DrawShootingLine():
 
 func ResetShootingLine():
 	ShootingLineIndex = 0
+
+	for i in ShootingLineArray:
+		i.queue_free()
+
 	ShootingLineArray.clear()
 
 
@@ -85,5 +89,5 @@ func sendShootingData():
 
 
 func hideShootingLine():
-	for i in ShootingLineArray.size():
-		ShootingLineArray[i].visible = false
+	for i in ShootingLineArray:
+		i.visible = false
