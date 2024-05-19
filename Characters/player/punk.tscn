@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://5llmqrincwvn"]
+[gd_scene load_steps=6 format=3 uid="uid://5llmqrincwvn"]
 
-[ext_resource type="SpriteFrames" uid="uid://vhdlgkc4jcpe" path="res://Characters/PunkSpritFrame.tres" id="1_43nld"]
-[ext_resource type="Script" path="res://Characters/punk.gd" id="1_wxowy"]
-[ext_resource type="Script" path="res://Characters/Lines.gd" id="3_y1yqh"]
+[ext_resource type="SpriteFrames" uid="uid://vhdlgkc4jcpe" path="res://Characters/player/PunkSpritFrame.tres" id="1_43nld"]
+[ext_resource type="Script" path="res://Characters/player/punk.gd" id="1_wxowy"]
+[ext_resource type="Script" path="res://Characters/player/Lines.gd" id="3_y1yqh"]
+[ext_resource type="AudioStream" uid="uid://daytpm5lcv02l" path="res://music/Sound Effect/641236__captainyulef__bones.wav" id="4_fgg8m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hhjew"]
 size = Vector2(20, 16.5)
@@ -32,6 +33,11 @@ default_color = Color(0.352941, 1, 0.372549, 1)
 [node name="ShootingLineExample" type="Line2D" parent="Lines"]
 width = 2.0
 default_color = Color(1, 0, 0, 1)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="gunshot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fgg8m")
 
 [connection signal="ResetShootingData" from="." to="Lines" method="ResetShootingLine"]
 [connection signal="disableShootingLine" from="." to="Lines" method="hideShootingLine"]

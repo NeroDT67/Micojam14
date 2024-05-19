@@ -1,0 +1,156 @@
+[gd_scene load_steps=22 format=3 uid="uid://ditcpx2ydna45"]
+
+[ext_resource type="Texture2D" uid="uid://bsil0ugigcw35" path="res://Assets/free-guns-for-cyberpunk-characters-pixel-art/1 Characters/1 Biker/Idle1.png" id="1_nm8gj"]
+[ext_resource type="Script" path="res://Characters/enemy/enemy.gd" id="1_u642n"]
+[ext_resource type="Texture2D" uid="uid://bvsfqtgyktf7y" path="res://Assets/free-guns-for-cyberpunk-characters-pixel-art/1 Characters/1 Biker/Jump1.png" id="2_pygur"]
+[ext_resource type="Texture2D" uid="uid://dgwyru7r33ae7" path="res://Assets/free-guns-for-cyberpunk-characters-pixel-art/1 Characters/1 Biker/Run1.png" id="3_abxqu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdulb"]
+atlas = ExtResource("1_nm8gj")
+region = Rect2(0, 0, 27, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3pu3"]
+atlas = ExtResource("1_nm8gj")
+region = Rect2(48, 0, 27, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wonn3"]
+atlas = ExtResource("1_nm8gj")
+region = Rect2(96, 0, 27, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aqow"]
+atlas = ExtResource("1_nm8gj")
+region = Rect2(144, 0, 27, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd1lo"]
+atlas = ExtResource("2_pygur")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihlkq"]
+atlas = ExtResource("2_pygur")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ika0"]
+atlas = ExtResource("2_pygur")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7eq2"]
+atlas = ExtResource("2_pygur")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfv3y"]
+atlas = ExtResource("3_abxqu")
+region = Rect2(0, 0, 31, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hneno"]
+atlas = ExtResource("3_abxqu")
+region = Rect2(48, 0, 31, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh3ed"]
+atlas = ExtResource("3_abxqu")
+region = Rect2(96, 0, 31, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn86a"]
+atlas = ExtResource("3_abxqu")
+region = Rect2(144, 0, 31, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq8g7"]
+atlas = ExtResource("3_abxqu")
+region = Rect2(192, 0, 31, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh7oj"]
+atlas = ExtResource("3_abxqu")
+region = Rect2(240, 0, 31, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_274le"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdulb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3pu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wonn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4aqow")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd1lo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihlkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ika0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7eq2")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfv3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hneno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sh3ed")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn86a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lq8g7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh7oj")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_07r2p"]
+size = Vector2(72, 102)
+
+[sub_resource type="GDScript" id="GDScript_0uxsh"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+	
+	
+
+"
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_u642n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_274le")
+animation = &"run"
+frame_progress = 0.468069
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 22)
+shape = SubResource("RectangleShape2D_07r2p")
+script = SubResource("GDScript_0uxsh")

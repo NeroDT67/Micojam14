@@ -1,11 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://6rfgs3rbbrvk"]
+[gd_scene load_steps=28 format=3 uid="uid://6rfgs3rbbrvk"]
 
 [ext_resource type="Texture2D" uid="uid://drpwb7h72uo2i" path="res://Assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_8xjqb"]
-[ext_resource type="Texture2D" uid="uid://cf34eygvpy151" path="res://Assets/Sidescroller Shooter - Central City/Background/Mid Fog.png" id="2_boe2k"]
-[ext_resource type="Texture2D" uid="uid://bl721ta6nox1x" path="res://Assets/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="3_3wfcc"]
+[ext_resource type="Texture2D" uid="uid://cn3oto4ls64p" path="res://Assets/Sidescroller Shooter - Central City/Background/Mid Fog.png" id="2_boe2k"]
+[ext_resource type="Texture2D" uid="uid://cith5lle02ifb" path="res://Assets/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="3_3wfcc"]
 [ext_resource type="Texture2D" uid="uid://bv5nhxagfyy0r" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_11.png" id="4_dyb6h"]
 [ext_resource type="Texture2D" uid="uid://i3ig3aci7vjr" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Fence2.png" id="5_3i710"]
 [ext_resource type="Texture2D" uid="uid://8ydt1bgdni4o" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Locker4.png" id="6_ej0x6"]
+[ext_resource type="Texture2D" uid="uid://oesrmkk75cn8" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_09.png" id="6_to3wx"]
 [ext_resource type="Texture2D" uid="uid://3tqq40h3c5cu" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_73.png" id="7_umbya"]
 [ext_resource type="Texture2D" uid="uid://b6sxpswsl56f8" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_62.png" id="8_cstnr"]
 [ext_resource type="Texture2D" uid="uid://pgcmrkb2dmti" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_04.png" id="9_jpwlt"]
@@ -13,6 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://bxydgcoav54kk" path="res://Assets/Free Industrial Zone Tileset/1 Tiles/IndustrialTile_06.png" id="11_3i0wm"]
 [ext_resource type="Texture2D" uid="uid://cb880qlmc645p" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Fence3.png" id="12_r8b6u"]
 [ext_resource type="Texture2D" uid="uid://b6huhbl3qxgwu" path="res://Assets/Free Industrial Zone Tileset/3 Objects/Fence1.png" id="13_l6sh7"]
+[ext_resource type="PackedScene" uid="uid://5llmqrincwvn" path="res://Characters/player/punk.tscn" id="14_4r2ft"]
+[ext_resource type="PackedScene" uid="uid://h2hqcwk6scl0" path="res://UI/gameplay_ui.tscn" id="15_wyqlq"]
+[ext_resource type="PackedScene" uid="uid://ditcpx2ydna45" path="res://Characters/enemy/enemy.tscn" id="16_b8kym"]
+[ext_resource type="Script" path="res://zavior/scoreL.gd" id="16_w3uf3"]
+[ext_resource type="PackedScene" uid="uid://bv55x0cgkealh" path="res://music/music2d.tscn" id="18_we21t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fh2w"]
 size = Vector2(1.67815, 35.6761)
@@ -24,101 +30,24 @@ size = Vector2(8.13215, 4.88258)
 size = Vector2(11.4149, 5.89294)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nqr7w"]
-size = Vector2(1.46838, 40.932)
+size = Vector2(1.46838, 40.3824)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_611js"]
-size = Vector2(0.92334, 0.302343)
+size = Vector2(0.916931, 0.302343)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e3s5r"]
 size = Vector2(24.5255, 1.34934)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edn1g"]
+size = Vector2(5.92699, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7m74h"]
+size = Vector2(60.3431, 62.9999)
+
 [node name="Node2D" type="Node2D"]
 
-[node name="background" type="TextureRect" parent="."]
-texture_filter = 1
-offset_top = -11.0
-offset_right = 1917.0
-offset_bottom = 1070.0
-texture = ExtResource("1_8xjqb")
-metadata/_edit_lock_ = true
-
-[node name="Mid" type="TextureRect" parent="background"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 695.0
-offset_right = -4.0
-offset_bottom = -11.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_boe2k")
-metadata/_edit_lock_ = true
-
-[node name="forground" type="TextureRect" parent="background"]
-offset_left = -1.0
-offset_top = 645.0
-offset_right = 1920.0
-offset_bottom = 1095.0
-texture = ExtResource("3_3wfcc")
-metadata/_edit_lock_ = true
-
-[node name="underground" type="Sprite2D" parent="background"]
-texture_filter = 1
-texture_repeat = 2
-position = Vector2(266.5, 839)
-scale = Vector2(1.71935, 2.21212)
-texture = ExtResource("4_dyb6h")
-region_enabled = true
-region_rect = Rect2(0, 0, 310, 239.93)
-metadata/_edit_lock_ = true
-
-[node name="underground2" type="Sprite2D" parent="background"]
-texture_filter = 1
-texture_repeat = 2
-position = Vector2(1587, 876)
-scale = Vector2(1.71935, 2.24414)
-texture = ExtResource("4_dyb6h")
-region_enabled = true
-region_rect = Rect2(0, 0, 437.79, 204.815)
-metadata/_edit_lock_ = true
-
-[node name="Fence2" type="Sprite2D" parent="background"]
-position = Vector2(803.25, 971)
-scale = Vector2(4.48437, 3.25)
-texture = ExtResource("5_3i710")
-metadata/_edit_lock_ = true
-
-[node name="Fence3" type="Sprite2D" parent="background"]
-position = Vector2(946, 969)
-scale = Vector2(4.48437, 3.4375)
-texture = ExtResource("5_3i710")
-metadata/_edit_lock_ = true
-
-[node name="Fence4" type="Sprite2D" parent="background"]
-position = Vector2(660, 971)
-scale = Vector2(4.48437, 3.3125)
-texture = ExtResource("5_3i710")
-metadata/_edit_lock_ = true
-
-[node name="Locker4" type="Sprite2D" parent="background"]
-position = Vector2(1161, 962)
-scale = Vector2(4.59375, 3.69444)
-texture = ExtResource("6_ej0x6")
-metadata/_edit_lock_ = true
-
-[node name="Fence5" type="Sprite2D" parent="background"]
-position = Vector2(1071.5, 969.5)
-scale = Vector2(3.34375, 3.15625)
-texture = ExtResource("12_r8b6u")
-metadata/_edit_lock_ = true
-
-[node name="Fence1" type="Sprite2D" parent="background"]
-position = Vector2(591, 970.25)
-scale = Vector2(3.5, 3.07813)
-texture = ExtResource("13_l6sh7")
-metadata/_edit_lock_ = true
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(963, 537)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1261, 933)
@@ -139,7 +68,6 @@ metadata/_edit_lock_ = true
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(0.333313, 31.2236)
-scale = Vector2(1, 1)
 texture = ExtResource("7_umbya")
 region_enabled = true
 region_rect = Rect2(0, 0, 251.145, 33)
@@ -149,7 +77,6 @@ metadata/_edit_lock_ = true
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(-496.667, -45.1477)
-scale = Vector2(1, 1)
 texture = ExtResource("7_umbya")
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 64)
@@ -189,7 +116,6 @@ metadata/_edit_lock_ = true
 texture_filter = 1
 texture_repeat = 2
 position = Vector2(15, -130.38)
-scale = Vector2(1, 1)
 texture = ExtResource("7_umbya")
 region_enabled = true
 region_rect = Rect2(0, 0, 192, 33)
@@ -225,6 +151,43 @@ region_enabled = true
 region_rect = Rect2(0, 0, 33, 128.35)
 metadata/_edit_lock_ = true
 
+[node name="floor10" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-279, 51.4767)
+scale = Vector2(0.364583, 0.421942)
+texture = ExtResource("6_to3wx")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="floor11" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-320.333, 67.9325)
+scale = Vector2(0.364583, 0.421942)
+texture = ExtResource("6_to3wx")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+metadata/_edit_lock_ = true
+
+[node name="floor13" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-233.667, 31.2235)
+scale = Vector2(0.364583, 0.421942)
+texture = ExtResource("6_to3wx")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="floor14" type="Sprite2D" parent="StaticBody2D/floor"]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(-189.667, 19.8311)
+scale = Vector2(0.364583, 0.421942)
+texture = ExtResource("6_to3wx")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-0.0174809, -5.8133)
 shape = SubResource("RectangleShape2D_6fh2w")
@@ -239,15 +202,10 @@ position = Vector2(6.52906, -20.9438)
 shape = SubResource("RectangleShape2D_p1eor")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-13.5126, -8.68014)
+position = Vector2(-13.5126, -8.39995)
 scale = Vector2(1.02057, 1.0196)
 shape = SubResource("RectangleShape2D_nqr7w")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-15.9424, -26.3191)
-rotation = -3.14159
-scale = Vector2(0.34567, -4.74035)
-shape = SubResource("RectangleShape2D_611js")
+metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-20.3825, -32.3315)
@@ -260,3 +218,161 @@ position = Vector2(6.48535, -45.4313)
 rotation = -3.14159
 scale = Vector2(0.409123, -4.19022)
 shape = SubResource("RectangleShape2D_e3s5r")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-15.7594, -19.1122)
+shape = SubResource("RectangleShape2D_edn1g")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-11.1178, -8.16251)
+scale = Vector2(0.0191195, 0.0796343)
+shape = SubResource("RectangleShape2D_7m74h")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-8.96762, -11.3081)
+scale = Vector2(0.0191195, 0.0796343)
+shape = SubResource("RectangleShape2D_7m74h")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-6.59024, -14.812)
+scale = Vector2(0.0191195, 0.0796343)
+shape = SubResource("RectangleShape2D_7m74h")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-4.2653, -17.2806)
+scale = Vector2(0.0191195, 0.0796343)
+shape = SubResource("RectangleShape2D_7m74h")
+
+[node name="Mid" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 684.0
+offset_right = 18.0
+offset_bottom = 828.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_boe2k")
+metadata/_edit_lock_ = true
+
+[node name="forground" type="TextureRect" parent="."]
+offset_left = -1.0
+offset_top = 634.0
+offset_right = 1920.0
+offset_bottom = 1084.0
+texture = ExtResource("3_3wfcc")
+metadata/_edit_lock_ = true
+
+[node name="underground" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(266.5, 828)
+scale = Vector2(1.71935, 2.21212)
+texture = ExtResource("4_dyb6h")
+region_enabled = true
+region_rect = Rect2(0, 0, 310, 239.93)
+metadata/_edit_lock_ = true
+
+[node name="underground2" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(1587, 865)
+scale = Vector2(1.71935, 2.24414)
+texture = ExtResource("4_dyb6h")
+region_enabled = true
+region_rect = Rect2(0, 0, 437.79, 204.815)
+metadata/_edit_lock_ = true
+
+[node name="Fence2" type="Sprite2D" parent="."]
+position = Vector2(803.25, 960)
+scale = Vector2(4.48437, 3.25)
+texture = ExtResource("5_3i710")
+metadata/_edit_lock_ = true
+
+[node name="Fence3" type="Sprite2D" parent="."]
+position = Vector2(946, 958)
+scale = Vector2(4.48437, 3.4375)
+texture = ExtResource("5_3i710")
+metadata/_edit_lock_ = true
+
+[node name="Fence4" type="Sprite2D" parent="."]
+position = Vector2(660, 960)
+scale = Vector2(4.48437, 3.3125)
+texture = ExtResource("5_3i710")
+metadata/_edit_lock_ = true
+
+[node name="Locker4" type="Sprite2D" parent="."]
+position = Vector2(1161, 951)
+scale = Vector2(4.59375, 3.69444)
+texture = ExtResource("6_ej0x6")
+metadata/_edit_lock_ = true
+
+[node name="Fence5" type="Sprite2D" parent="."]
+position = Vector2(1071.5, 958.5)
+scale = Vector2(3.34375, 3.15625)
+texture = ExtResource("12_r8b6u")
+metadata/_edit_lock_ = true
+
+[node name="Fence1" type="Sprite2D" parent="."]
+position = Vector2(591, 959.25)
+scale = Vector2(3.5, 3.07813)
+texture = ExtResource("13_l6sh7")
+metadata/_edit_lock_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(960, 529)
+scale = Vector2(3.33, 3.33)
+texture = ExtResource("1_8xjqb")
+metadata/_edit_lock_ = true
+
+[node name="Punk" parent="." instance=ExtResource("14_4r2ft")]
+position = Vector2(100, 456)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+metadata/_edit_lock_ = true
+
+[node name="GameplayUi" parent="Control" instance=ExtResource("15_wyqlq")]
+layout_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="scoreL" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -314.0
+offset_right = -7.0
+offset_bottom = 90.0
+grow_horizontal = 0
+theme_override_colors/default_color = Color(0.85098, 1, 0.898039, 1)
+theme_override_font_sizes/normal_font_size = 60
+text = "HI"
+script = ExtResource("16_w3uf3")
+
+[node name="enemy" parent="." instance=ExtResource("16_b8kym")]
+position = Vector2(1322, 558)
+PonitOne = Vector2(1300, 599)
+PonitTwo = Vector2(1700, 599)
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("18_we21t")]
+position = Vector2(303, 1233)
+
+[node name="enemy2" parent="." instance=ExtResource("16_b8kym")]
+position = Vector2(869, 940)
+PonitOne = Vector2(600, 940)
+PonitTwo = Vector2(1100, 940)
+
+[connection signal="sendShootingData" from="Punk" to="Punk/Lines" method="sendShootingData"]
+[connection signal="end_turn_pressed" from="Control/GameplayUi" to="Punk" method="startMoving"]
+[connection signal="move_pressed" from="Control/GameplayUi" to="Punk/Lines" method="DrawMoveLine"]
+[connection signal="shoot_pressed" from="Control/GameplayUi" to="Punk/Lines" method="DrawShootingLine"]
+
+[editable path="Punk"]

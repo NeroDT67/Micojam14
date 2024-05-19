@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://daytpm5lcv02l"
+path="res://.godot/imported/641236__captainyulef__bones.wav-3eb105e828f041ad6d6534d6d7e883ad.sample"
+
+[deps]
+
+source_file="res://music/Sound Effect/641236__captainyulef__bones.wav"
+dest_files=["res://.godot/imported/641236__captainyulef__bones.wav-3eb105e828f041ad6d6534d6d7e883ad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

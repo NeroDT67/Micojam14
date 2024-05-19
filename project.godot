@@ -15,6 +15,10 @@ run/main_scene="res://zavior/node_2d.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+LevelOneScript="*res://UI/LevelOne_script.gd"
+
 [display]
 
 window/size/viewport_width=1920

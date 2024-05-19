@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3l8dl47r13p8"
+path="res://.godot/imported/game-bonus-144751.mp3-0d1dda07eb44a03eadf761537ab28143.mp3str"
+
+[deps]
+
+source_file="res://music/Sound Effect/game-bonus-144751.mp3"
+dest_files=["res://.godot/imported/game-bonus-144751.mp3-0d1dda07eb44a03eadf761537ab28143.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

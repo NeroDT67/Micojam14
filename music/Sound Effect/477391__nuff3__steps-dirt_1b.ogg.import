@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://busm01grcle2y"
+path="res://.godot/imported/477391__nuff3__steps-dirt_1b.ogg-2b65715e1c1500669baea97dae293498.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/Sound Effect/477391__nuff3__steps-dirt_1b.ogg"
+dest_files=["res://.godot/imported/477391__nuff3__steps-dirt_1b.ogg-2b65715e1c1500669baea97dae293498.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
