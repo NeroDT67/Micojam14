@@ -50,7 +50,7 @@ func _physics_process(delta):
 		#print(targetPosition.x)
 		#print(targetPosition.y)
 		
-		if (position.x - targetPosition.x) < 5 and (position.x - targetPosition.x) > -5:
+		if position.distance_to(targetPosition) < 10:
 			MoveLineIndex += 1
 			calcutateTargetPosition()
 			
@@ -63,7 +63,7 @@ func _physics_process(delta):
 
 	for i in range(ShootingPos.size()):
 		
-		if ShootingPos[i].distance_to(position) < 5:
+		if ShootingPos[i].distance_to(position) < 10:
 			Shoot(ShootingPos[i], ShootingAngle[i])
 			ShootingPos.remove_at(i)
 			ShootingAngle.remove_at(i)
@@ -130,5 +130,5 @@ var bullet = preload("res://GunsAndBullets/Bullet1.tscn")
 
 func Shoot(pos : Vector2, angle : Vector2):
 	var b = bullet.instantiate()
-	b.start(pos + angle*10, angle)
+	b.start(pos + angle*50, angle)
 	get_tree().root.add_child(b)
