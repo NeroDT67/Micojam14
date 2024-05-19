@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://5llmqrincwvn"]
+
+[ext_resource type="SpriteFrames" uid="uid://vhdlgkc4jcpe" path="res://Characters/PunkSpritFrame.tres" id="1_43nld"]
+[ext_resource type="Script" path="res://Characters/punk.gd" id="1_wxowy"]
+[ext_resource type="Script" path="res://Characters/Lines.gd" id="3_y1yqh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhjew"]
+size = Vector2(20, 16.5)
+
+[node name="Punk" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_wxowy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_hhjew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_43nld")
+animation = &"Run"
+frame_progress = 0.0207654
+
+[node name="Lines" type="Node2D" parent="."]
+script = ExtResource("3_y1yqh")
+
+[node name="MoveLine" type="Line2D" parent="Lines"]
+points = PackedVector2Array(0, 0)
+width = 2.0
+default_color = Color(0.352941, 1, 0.372549, 1)
+
+[node name="ShootingLineExample" type="Line2D" parent="Lines"]
+width = 2.0
+default_color = Color(1, 0, 0, 1)
+
+[connection signal="ResetShootingData" from="." to="Lines" method="ResetShootingLine"]
+[connection signal="disableShootingLine" from="." to="Lines" method="hideShootingLine"]
+[connection signal="sendShootingData" from="." to="Lines" method="sendShootingData"]
+[connection signal="ShootDataSignal" from="Lines" to="." method="SetShootingDetails"]
