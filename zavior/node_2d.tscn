@@ -46,6 +46,9 @@ size = Vector2(60.3431, 62.9999)
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(963, 537)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1261, 933)
 scale = Vector2(57.2058, 12.5574)
