@@ -133,3 +133,5 @@ func Shoot(pos : Vector2, angle : Vector2):
 	b.start(pos + angle*50, angle)
 	get_tree().root.add_child(b)
 	
+func player():
+	pass
