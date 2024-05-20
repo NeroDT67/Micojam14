@@ -1,4 +1,4 @@
-# TurtleBoo
+# UrbanLine
 ## For Microjam 14
 
 A 2D platformer game created for Microjam 14. Utilizing Drawn lines to Move and Shoot enemies.
@@ -20,7 +20,6 @@ Draw lines by clicking and draging with the mouse.
 * Level Creation
 * Audio
 * Menus
-
 
 
 # Assets Used:
