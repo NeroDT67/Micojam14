@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://6rfgs3rbbrvk"]
+[gd_scene load_steps=30 format=3 uid="uid://6rfgs3rbbrvk"]
 
 [ext_resource type="Texture2D" uid="uid://drpwb7h72uo2i" path="res://Assets/Free Industrial Zone Tileset/2 Background/Background.png" id="1_8xjqb"]
 [ext_resource type="Texture2D" uid="uid://cn3oto4ls64p" path="res://Assets/Sidescroller Shooter - Central City/Background/Mid Fog.png" id="2_boe2k"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://ditcpx2ydna45" path="res://Characters/enemy/enemy.tscn" id="16_b8kym"]
 [ext_resource type="Script" path="res://zavior/scoreL.gd" id="16_w3uf3"]
 [ext_resource type="PackedScene" uid="uid://bv55x0cgkealh" path="res://music/music2d.tscn" id="18_we21t"]
+[ext_resource type="Script" path="res://zavior/Win Area.gd" id="20_pm4pl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6fh2w"]
 size = Vector2(1.67815, 35.6761)
@@ -43,6 +44,8 @@ size = Vector2(5.92699, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7m74h"]
 size = Vector2(60.3431, 62.9999)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jr3o"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -364,15 +367,25 @@ PonitTwo = Vector2(1700, 599)
 
 [node name="AudioStreamPlayer2D" parent="." instance=ExtResource("18_we21t")]
 position = Vector2(303, 1233)
+autoplay = false
 
 [node name="enemy2" parent="." instance=ExtResource("16_b8kym")]
 position = Vector2(869, 940)
 PonitOne = Vector2(600, 940)
 PonitTwo = Vector2(1100, 940)
 
-[connection signal="sendShootingData" from="Punk" to="Punk/Lines" method="sendShootingData"]
+[node name="Win Area" type="Area2D" parent="."]
+position = Vector2(1900, 600)
+scale = Vector2(5, 6)
+script = ExtResource("20_pm4pl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Win Area"]
+position = Vector2(-6, -6.66667)
+shape = SubResource("RectangleShape2D_5jr3o")
+
 [connection signal="end_turn_pressed" from="Control/GameplayUi" to="Punk" method="startMoving"]
 [connection signal="move_pressed" from="Control/GameplayUi" to="Punk/Lines" method="DrawMoveLine"]
 [connection signal="shoot_pressed" from="Control/GameplayUi" to="Punk/Lines" method="DrawShootingLine"]
+[connection signal="body_entered" from="Win Area" to="Win Area" method="_on_body_entered"]
 
 [editable path="Punk"]
